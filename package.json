@@ -1,0 +1,48 @@
+{
+  "name": "garron-vue-template",
+  "private": true,
+  "scripts": {
+    "commit": "git add . && git-cz",
+    "init": "pnpm install",
+    "clear": "rimraf 'packages/*/node_modules' && rimraf node_modules",
+    "changeset": "changeset",
+    "build": "pnpm --filter=@garron/* run build",
+    "version-packages": "changeset version",
+    "release": "pnpm --recursive --stream build && pnpm release:only",
+    "release:only": "changeset publish --registry=https://registry.npmjs.com/",
+    "prepare": "husky install"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.4.6",
+    "@changesets/cli": "^2.24.4",
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@commitlint/cz-commitlint": "^17.1.2",
+    "@garron/rule": "^1.0.1",
+    "commitizen": "^4.2.5",
+    "commitlint-config-cz": "^0.13.3",
+    "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "^3.3.0"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "packageManager": "pnpm@7.5.1"
+}

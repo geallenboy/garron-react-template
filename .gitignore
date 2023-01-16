@@ -1,0 +1,21 @@
+.DS_Store
+node_modules/
+dist/
+/npm-debug.log*
+/yarn-error.log
+/yarn.lock
+/package-lock.json
+
+# production
+es/
+docs-dist/
+lib/
+cjs/
+# misc 
+
+coverage/
+
+
+# ide
+/.vscode
+/.idea
